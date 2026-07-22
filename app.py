@@ -6,9 +6,9 @@ from flask_migrate import Migrate
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = 'ABCD123456789' #ACu1iRjHrJmXjVHx
+app.secret_key = 'ABCD123456789' 
 
-DATABASE_URL = os.getenv('DATABASE_URL') or "postgresql://postgres:ACu1iRjHrJmXjVHx@db.klahrymtwhwltigfeltp.supabase.co:5432/postgres"
+DATABASE_URL = os.getenv('DATABASE_URL') or "postgresql://postgres:@db.klahrymtwhwltigfeltp.supabase.co:5432/postgres" #ACu1iRjHrJmXjVHx
 if DATABASE_URL:
     DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql://', 1)
     app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
